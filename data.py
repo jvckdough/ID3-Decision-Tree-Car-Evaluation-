@@ -1,6 +1,3 @@
-''' This file provides utility functions for loading data that you may find useful.
-    You don't need to change this file.
-'''
 
 from glob import glob
 

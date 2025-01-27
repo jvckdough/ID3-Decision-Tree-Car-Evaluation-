@@ -1,6 +1,3 @@
-''' This file contains the functions for performing cross-validation.
-    You need to add your code wherever you see "YOUR CODE HERE".
-'''
 
 import argparse
 from typing import Tuple
@@ -15,7 +12,7 @@ from train import train, evaluate
 
 def cross_validation(cv_folds: list, depth_limit_values: list, ig_criterion: str = 'entropy') -> Tuple[dict, float]:
     '''
-    Run cross-validation to determine the best hyperparameters.
+    Runs cross-validation to determine the best hyperparameters.
 
     Args:
         cv_folds (list): a list of dataframes, each corresponding to a fold of the data
@@ -26,12 +23,7 @@ def cross_validation(cv_folds: list, depth_limit_values: list, ig_criterion: str
         dict: a dictionary with the best hyperparameters discovered during cross-validation
         float: the average cross-validation accuracy corresponding to the best hyperparameters
 
-    Hint:
-        - You'll need to instantiate a new DecisionTree object for every depth_limit value and fold
-        - You should be able to reuse your train and evaluate functions from train.py
-        - You can concatenate a list of dataframes with `pd.concat([df1, df2, ...], axis=1)`
     '''
-    # YOUR CODE HERE
 
     best_hyperparams = {'depth_limit': None}
     best_avg_accuracy = 0

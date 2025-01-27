@@ -1,5 +1,4 @@
 ''' This file contains the functions for training and evaluating a model.
-    You need to add your code wherever you see "YOUR CODE HERE".
 '''
 
 import argparse
@@ -13,22 +12,21 @@ from model import DecisionTree, MajorityBaseline, Model
 
 def train(model: Model, x: pd.DataFrame, y: list):
     '''
-    Learn a model from training data.
-s
+    Learns a model from training data.
+
     Args:
         model (Model): an instantiated MajorityBaseline or DecisionTree model
         x (pd.DataFrame): a dataframe with the features the tree will be trained from
         y (list): a list with the target labels corresponding to each example
     '''
     
-    # YOUR CODE HERE
     model = model.train(x, y)
     return 
 
 
 def evaluate(model: Model, x: pd.DataFrame, y: list) -> float:
     '''
-    Evaluate a trained model against a dataset
+    Evaluates a trained model against a dataset
 
     Args:
         model (Model): an instance of a MajorityBaseline model or a DecisionTree model
@@ -39,7 +37,6 @@ def evaluate(model: Model, x: pd.DataFrame, y: list) -> float:
         float: the accuracy of the decision tree's predictions on x, when compared to y
     '''
     
-    # YOUR CODE HERE
     y_hat = model.predict(x)
     accuracy  = calculate_accuracy(y, y_hat)
     return accuracy
@@ -47,7 +44,7 @@ def evaluate(model: Model, x: pd.DataFrame, y: list) -> float:
 
 def calculate_accuracy(labels: list, predictions: list) -> float:
     '''
-    Calculate the accuracy between ground-truth labels and candidate predictions.
+    Calculates the accuracy between ground-truth labels and candidate predictions.
     Should be a float between 0 and 1.
 
     Args:
@@ -58,7 +55,6 @@ def calculate_accuracy(labels: list, predictions: list) -> float:
         float: the accuracy of the predictions, when compared to the ground-truth labels
     '''
 
-    # YOUR CODE HERE
     correct = 0
 
     total = len(predictions)

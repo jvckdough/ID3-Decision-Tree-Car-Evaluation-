@@ -1,6 +1,4 @@
-''' This file defines the model classes that will be used. 
-    You need to add your code wherever you see "YOUR CODE HERE".
-'''
+
 
 from math import log2
 from typing import Protocol
@@ -14,9 +12,6 @@ import seaborn
 
 import pandas as pd
 
-
-# DON'T CHANGE THE CLASS BELOW! 
-# You will implement the train and predict functions in the MajorityBaseline and DecisionTree classes further down.
 class Model(Protocol):
     def train(self, x: pd.DataFrame, y: pd.DataFrame):
         ...
@@ -34,25 +29,20 @@ class MajorityBaseline(Model):
 
     def train(self, x: pd.DataFrame, y: list):
         '''
-        Train a baseline model that returns the most common label in the dataset.
+        Trains a baseline model that returns the most common label in the dataset.
 
         Args:
             x (pd.DataFrame): a dataframe with the features the tree will be trained from
             y (list): a list with the target labels corresponding to each example
-
-        Note:
-            - If you prefer not to use pandas, you can convert a dataframe `df` to a 
-              list of dictionaries with `df.to_dict(orient='records')`.
         '''
 
-        # YOUR CODE HERE
         self.__most_common = max(set(y), key=y.count)
         return 
     
 
     def predict(self, x: pd.DataFrame) -> list:
         '''
-        Predict the labels for a dataset.
+        Predicts the labels for a dataset.
 
         Args:
             x (pd.DataFrame): a dataframe containing the features we want to predict labels for
@@ -60,7 +50,6 @@ class MajorityBaseline(Model):
         Returns:
             list: A list with the predicted labels, each corresponding to a row in `x`.
         '''
-        # YOUR CODE HERE
         y_hat = [self.__most_common] * len(x)
         return y_hat
 
@@ -132,21 +121,13 @@ class DecisionTree(Model):
 
     def train(self, x: pd.DataFrame, y: list):
         '''
-        Train a decision tree from a dataset.
+        Trains a decision tree from a dataset.
 
         Args:
             x (pd.DataFrame): a dataframe with the features the tree will be trained from
             y (list): a list with the target labels corresponding to each example
-
-        Note:
-            - If you prefer not to use pandas, you can convert a dataframe `df` to a 
-              list of dictionaries with `df.to_dict(orient='records')`.
-            - Ignore self.depth_limit if it's set to None
-            - Use the variable self.ig_criterion to decide whether to calulate information gain 
-              with entropy or collision entropy
         '''
 
-        # YOUR CODE HERE
         # If all labels are the same 
         self.most_common = max(set(y), key=y.count)
         if self.depth_limit == None:
@@ -173,7 +154,7 @@ class DecisionTree(Model):
 
     def predict(self, x: pd.DataFrame) -> list:
         '''
-        Predict the labels for a dataset.
+        Predicts the labels for a dataset.
 
         Args:
             x (pd.DataFrame): a dataframe containing the features we want to predict labels for
@@ -181,7 +162,6 @@ class DecisionTree(Model):
         Returns:
             list: A list with the predicted labels, each corresponding to a row in `x`.
         '''
-        # YOUR CODE HERE
         y_hat=[]
         for _, row in x.iterrows():
             instance = row.to_dict()
