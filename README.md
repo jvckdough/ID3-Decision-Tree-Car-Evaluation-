@@ -15,18 +15,22 @@ The Car Evaluation dataset is used to test the implementation. It evaluates cars
 How to Use
 
 Clone the repository:
+```
+  git clone https://github.com/jvckdough/id3-decision-tree-car-evaluation.git
+```
 
-  1. git clone https://github.com/jvckdough/id3-decision-tree-car-evaluation.git
+you can train and evaluate your model with:
+```sh
+python train.py -m decision_tree                   # runs with no depth limiting
+python train.py -m decision_tree -d 2              # runs with depth_limit set to 2
+```
 
-Install dependencies:
+You can run cross validation with:
+```sh
+python cross_validation.py -d 1 2 3 4              # runs CV with the depth_limit_values=[1, 2, 3, 4]
+python cross_validation.py -d 1 2 3 4 -i collision # runs CV with the depth_limit_values=[1, 2, 3, 4] and ig_criterion="collision"
 
-  2. pip install -r requirements.txt
-
-
-Run the script to train and evaluate the decision tree:
-
-  3. python main.py
-
+```
 
 DATA: https://archive.ics.uci.edu/dataset/19/car+evaluation
 
