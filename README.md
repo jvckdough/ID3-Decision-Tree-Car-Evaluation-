@@ -1,4 +1,4 @@
-ID3 Decision Tree Implementation
+# ID3 Decision Tree Implementation
 
 This repository contains an implementation of a decision tree from scratch using the ID3 algorithm. The model uses entropy to calculate information gain and determine the best splits. It is tested on the Car Evaluation dataset from the UCI Machine Learning Repository to classify cars based on categorical attributes.
 
