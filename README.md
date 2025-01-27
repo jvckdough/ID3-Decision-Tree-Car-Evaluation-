@@ -28,7 +28,6 @@ python train.py -m decision_tree -d 2              # runs with depth_limit set t
 You can run cross validation with:
 ```sh
 python cross_validation.py -d 1 2 3 4              # runs CV with the depth_limit_values=[1, 2, 3, 4]
-python cross_validation.py -d 1 2 3 4 -i collision # runs CV with the depth_limit_values=[1, 2, 3, 4] and ig_criterion="collision"
 
 ```
 
