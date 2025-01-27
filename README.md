@@ -28,6 +28,6 @@ Run the script to train and evaluate the decision tree:
   3. python main.py
 
 
-
+DATA: https://archive.ics.uci.edu/dataset/19/car+evaluation
 
 
